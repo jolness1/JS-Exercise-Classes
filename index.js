@@ -90,6 +90,8 @@ class Car {
     if (this.tank - distance / this.milesPerGallon > 0) {
       this.odometer += distance;
       this.tank -= distance / this.milesPerGallon;
+    } else if (this.tank <= 0) {
+      return `I ran out of fuel at ${this.odometer} miles!`
     }
   }
 }
@@ -172,13 +174,13 @@ class Student extends Lambdasian {
     this.favSubjects = object.favSubjects;
   }
   listSubjects(){
-    return `Loving ${this.favSubjects}`
+    return `Loving ${this.favSubjects}!`
   }
   PRAssignment(subject){
-    return `${student.name} has submitted a PR for ${subject}`
+    return `${Student.name} has submitted a PR for ${subject}`
   }
   sprintChallenge(subject){
-    return `${student.name} has begun sprint challenge on ${subject}`
+    `${Student.name} has begun sprint challenge on ${subject}!`
   }
 }
 
@@ -203,10 +205,10 @@ class ProjectManager extends Instructor {
     this.favInstructor = object.favInstructor;
   }
   standUp(channel){
-    return `${name} announces to ${channel}, @channel standy times!`
+    return `${this.name} announces to ${channel}, @channel standy times!`
   }
   debugsCode(student, subject){
-    return `${this.name} debugs ${student}'s code on ${subject}`
+    return `${student} debugs ${Student.name}'s code on ${subject}` 
   }
 }
 
